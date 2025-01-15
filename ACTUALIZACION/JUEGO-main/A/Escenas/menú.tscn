@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://fncgbgxlaofn"]
+
+[ext_resource type="Script" path="res://Scripts/menú.gd" id="1_4vdvx"]
+[ext_resource type="Texture2D" uid="uid://c20e5e0rprvv6" path="res://IMAGENES/Captura de pantalla 2025-01-08 131336.png" id="2_x7f3a"]
+
+[node name="menú" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vdvx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -113.0
+offset_right = -91.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.615686, 0, 0.623529, 1)
+
+[node name="CapturaDePantalla2025-01-08131336" type="Sprite2D" parent="."]
+position = Vector2(511.5, 284.5)
+scale = Vector2(1.98364, 3.09962)
+texture = ExtResource("2_x7f3a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 122.0
+offset_right = 751.0
+offset_bottom = 432.0
+theme_override_constants/separation = 54
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "JUGAR"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "OPCIONES"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
