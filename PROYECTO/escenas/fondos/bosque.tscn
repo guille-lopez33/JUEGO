@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2w315uaww2id"]
+
+[ext_resource type="Texture2D" uid="uid://82vb86w0s6k2" path="res://imagen/fondos/istockphoto-1887333430-640x640.jpg" id="1_dp3ht"]
+[ext_resource type="PackedScene" uid="uid://b86cj54t17f6x" path="res://escenas/personajes/prota/prota.tscn" id="2_ppfv5"]
+[ext_resource type="PackedScene" uid="uid://cde6kfr2n3w5x" path="res://escenas/personajes/moneda.tscn" id="4_7eelq"]
+
+[sub_resource type="GDScript" id="GDScript_rqmh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppfv5"]
+size = Vector2(49, 754.281)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omofg"]
+size = Vector2(1178, 107.5)
+
+[node name="bosque" type="Node2D"]
+script = SubResource("GDScript_rqmh6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -32.0
+offset_top = -18.0
+offset_right = 1173.0
+offset_bottom = 659.0
+texture = ExtResource("1_dp3ht")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 128.0
+offset_top = 68.0
+offset_right = 964.0
+offset_bottom = 172.0
+theme_override_font_sizes/font_size = 27
+text = "Esto es muy sencillo, pilla la moneda pero CUIDAO no te caigas.
+Si te caes indica que eres mu malo."
+editable = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-24.5, 307.141)
+shape = SubResource("RectangleShape2D_ppfv5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1178, 279)
+shape = SubResource("RectangleShape2D_ppfv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(588, 587)
+shape = SubResource("RectangleShape2D_omofg")
+
+[node name="prota" parent="." instance=ExtResource("2_ppfv5")]
+position = Vector2(45, 502)
+
+[node name="Moneda" parent="." groups=["prota"] instance=ExtResource("4_7eelq")]
+position = Vector2(995, 390)
+scale = Vector2(4.03848, -3.87251)

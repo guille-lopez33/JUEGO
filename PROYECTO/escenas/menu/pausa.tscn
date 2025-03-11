@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://h0w1c3w4xrbm"]
+
+[ext_resource type="Script" path="res://escenas/menu/pausa.gd" id="1_01tbb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_01tbb")
