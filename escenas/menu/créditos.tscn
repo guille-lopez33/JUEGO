@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmguyf18y2rnu"]
+
+[ext_resource type="Script" path="res://scripts/menu/creditos.gd" id="1_kueiw"]
+[ext_resource type="Texture2D" uid="uid://c2i213ctpy3ui" path="res://imagen/menu_image/7b80cfce078d511840a1fb186bb78ddf.jpg" id="2_2yrb0"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "SAS
+"
+script = ExtResource("1_kueiw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.415686, 0.2, 0.129412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.0
+offset_top = -326.0
+offset_right = 579.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2yrb0")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 47.0
+offset_right = 861.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 39
+text = "Imagen menú: Devil May Cry 5 Official Art"
+editable = false
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 147.0
+offset_right = 653.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 39
+text = "Imagen créditos: Dragon Ball Z"
+editable = false
+
+[node name="TextEdit3" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 249.0
+offset_right = 688.0
+offset_bottom = 317.0
+theme_override_font_sizes/font_size = 39
+text = "Imagen controles: Imagen propia"
+editable = false
+
+[node name="TextEdit4" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 363.0
+offset_right = 531.0
+offset_bottom = 431.0
+theme_override_font_sizes/font_size = 39
+text = "Imagen opciones: Matrix"
+editable = false
+
+[node name="TextEdit5" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 461.0
+offset_right = 559.0
+offset_bottom = 529.0
+theme_override_font_sizes/font_size = 39
+text = "Free asstes de itch.io"
+editable = false
+
+[node name="TextEdit6" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 604.0
+offset_top = 399.0
+offset_right = 1149.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 39
+text = "Música: NoCopyrightSounds"
+editable = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.621
+anchor_right = 0.5
+anchor_bottom = 0.621
+offset_left = -310.0
+offset_top = 173.592
+offset_right = 311.0
+offset_bottom = 523.592
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.584314, 0.239216, 1)
+theme_override_font_sizes/font_size = 30
+text = "VOLVER
+"
+
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

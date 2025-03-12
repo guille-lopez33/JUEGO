@@ -1,0 +1,381 @@
+[gd_scene load_steps=18 format=4 uid="uid://cr471dud36cj2"]
+
+[ext_resource type="Texture2D" uid="uid://yn3esish8w0l" path="res://imagen/fondos/Backgrounds/desert_a.png" id="1_lyq1n"]
+[ext_resource type="Texture2D" uid="uid://dj0jjr35cned6" path="res://imagen/fondos/Tilesets/tileset_dirt.png" id="2_t7vr3"]
+[ext_resource type="PackedScene" uid="uid://b86cj54t17f6x" path="res://escenas/personajes/prota/prota.tscn" id="3_a8b52"]
+[ext_resource type="Script" path="res://scripts/muerte.gd" id="3_aybm5"]
+[ext_resource type="Texture2D" uid="uid://bye0bbbl3t63b" path="res://imagen/fondos/Backgrounds/desert_b.png" id="3_xbb0p"]
+[ext_resource type="PackedScene" uid="uid://cde6kfr2n3w5x" path="res://escenas/personajes/moneda.tscn" id="6_kk38e"]
+[ext_resource type="Script" path="res://scripts/moneda_final.gd" id="7_62hpx"]
+[ext_resource type="PackedScene" uid="uid://ckc2hd8w05v45" path="res://escenas/personajes/moneda2.tscn" id="8_pypld"]
+[ext_resource type="AudioStream" uid="uid://bdhjfx705ysp6" path="res://sonidos/LXNGVX, Warriyo - Mortals Funk Remix  NCS - Copyright Free Music.mp3" id="9_o7ljw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6wfu"]
+texture = ExtResource("2_t7vr3")
+3:1/0 = 0
+8:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wola2"]
+sources/0 = SubResource("TileSetAtlasSource_e6wfu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trfi5"]
+size = Vector2(313.5, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lo1p"]
+size = Vector2(127.5, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l103"]
+size = Vector2(47, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efu1e"]
+size = Vector2(31, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp2le"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drwux"]
+size = Vector2(249.683, 43)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 651.0
+texture = ExtResource("1_lyq1n")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_wola2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(132.75, 633)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_trfi5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(972.5, -2)
+shape = SubResource("RectangleShape2D_1lo1p")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(755.25, -82.5)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(691.25, -114)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(261.25, -82)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(194.25, -210)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(243.75, -66)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(211.25, -50)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-28.75, -162)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-76.75, -194)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-61.75, -178)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(34.25, -354)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.25, -371)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-12.75, -386)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(866.25, -290)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(661.25, -434)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(611.25, -451)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(580.25, -467)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(548.25, -481)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(531.25, -481)
+shape = SubResource("RectangleShape2D_0l103")
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(267.75, -274)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(307.25, -321)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(131.25, -257)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D55" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(83.25, -353)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(132.25, -241)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(147.25, -225)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D54" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-91.75, -209)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(595.25, -321)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(531.25, -258)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D43" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(563.25, -289)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D44" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(563.25, -273)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D45" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(580.25, -257)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D56" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(755.25, -402)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(595.25, -241)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D47" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(595.25, -225)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(564.25, -177)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D52" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(659.25, -98)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D53" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(787.25, -98)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D49" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(437.25, -144)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D50" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(373.25, -130)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(163.25, -209)
+shape = SubResource("RectangleShape2D_sp2le")
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(284.25, -290)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-34.75, -402)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(299.25, -306)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(380.25, -145)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(412.25, -145)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(476.25, -194)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(509.25, -194)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(523.25, -242)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(588.25, -195)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(717.25, -99)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(827.25, -307)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D57" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(715.25, -226)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D58" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(795.25, -178)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D59" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(876.25, -98)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(811.25, -322)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D51" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(587.25, -306)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(699.25, -449)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(74.25, -337)
+shape = SubResource("RectangleShape2D_efu1e")
+
+[node name="Area2D" type="Area2D" parent="." groups=["prota"]]
+position = Vector2(132.75, 633)
+script = ExtResource("3_aybm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(531.75, 71.5)
+scale = Vector2(2.94141, 0.992188)
+texture = ExtResource("3_xbb0p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(531.75, 33)
+scale = Vector2(3.00781, 1)
+shape = SubResource("RectangleShape2D_drwux")
+
+[node name="prota" parent="." instance=ExtResource("3_a8b52")]
+position = Vector2(22, 590)
+scale = Vector2(1.9222, 1.43429)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 854.0
+offset_top = 29.0
+offset_right = 914.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 39
+text = "2/3"
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -143.0
+offset_top = 13.0
+offset_right = -6.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 25
+text = "	Monedicas:"
+
+[node name="Moneda" parent="." instance=ExtResource("6_kk38e")]
+position = Vector2(661, 579)
+script = ExtResource("7_62hpx")
+
+[node name="Moneda2" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(442, 286)
+
+[node name="Moneda3" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(265, 347)
+
+[node name="Moneda4" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(346, 401)
+
+[node name="Moneda5" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(509, 468)
+
+[node name="Moneda6" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(334, 539)
+
+[node name="Moneda7" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(65, 396)
+
+[node name="Moneda8" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(139, 494)
+
+[node name="Moneda9" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(644, 417)
+
+[node name="Moneda10" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(703, 299)
+
+[node name="Moneda11" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(974, 287)
+
+[node name="Moneda12" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(870, 198)
+
+[node name="Moneda13" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(714, 114)
+
+[node name="Moneda14" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(793, 158)
+
+[node name="Moneda15" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(1076, 538)
+
+[node name="Moneda16" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(844, 486)
+
+[node name="Moneda17" parent="." instance=ExtResource("8_pypld")]
+position = Vector2(89, 202)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_o7ljw")
+volume_db = -22.554
+autoplay = true
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

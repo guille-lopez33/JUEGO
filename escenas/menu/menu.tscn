@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbpmau7lsxuas"]
+
+[ext_resource type="Script" path="res://scripts/menu/menu_script.gd" id="1_skh6o"]
+[ext_resource type="AudioStream" uid="uid://q42mgiug5k82" path="res://sonidos/Chill  sakura Hz (No Copyright Music).mp3" id="2_xctsq"]
+[ext_resource type="Script" path="res://scripts/menu/audio_stream_player.gd" id="3_yg4g8"]
+[ext_resource type="Texture2D" uid="uid://dkcoahodebxc4" path="res://imagen/menu_image/nero-de-devil-may-cry-5-4327.jpg" id="4_f2yod"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "SAS
+"
+script = ExtResource("1_skh6o")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xctsq")
+volume_db = -35.807
+autoplay = true
+script = ExtResource("3_yg4g8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.415686, 0.2, 0.129412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.0
+offset_top = -324.0
+offset_right = 579.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_f2yod")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.5
+offset_top = -175.0
+offset_right = 310.5
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.137255, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "JUGAR
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.541176, 0.235294, 0.0156863, 1)
+theme_override_font_sizes/font_size = 30
+text = "OPCIONES"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.505882, 0.858824, 0.0313726, 1)
+theme_override_font_sizes/font_size = 30
+text = "CREDITOS"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.584314, 0.239216, 1)
+theme_override_font_sizes/font_size = 30
+text = "SALIR
+"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

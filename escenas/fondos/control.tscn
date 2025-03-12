@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfahtod8xu8fx"]
+
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_os05w"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_os05w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -21.0
+offset_right = 1201.0
+offset_bottom = 715.0
+color = Color(0.351703, 0.276586, 0.155249, 1)
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 191.0
+offset_right = 840.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 68
+text = "HAS GANADO"
+editable = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 419.0
+offset_right = 678.0
+offset_bottom = 469.0
+theme_override_font_sizes/font_size = 30
+text = "Volver al menú"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

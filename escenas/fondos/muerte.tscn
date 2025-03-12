@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://i783o8qet8x6"]
+
+[ext_resource type="Texture2D" uid="uid://dpcvdrs46osy" path="res://imagen/324dd15a64b6a483d52b7cdde057b023.jpg" id="1_rju4r"]
+[ext_resource type="Script" path="res://scripts/reintentar.gd" id="2_7kfe6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1241.0
+offset_bottom = 733.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 58.0
+offset_right = 833.0
+offset_bottom = 450.0
+texture = ExtResource("1_rju4r")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 511.0
+offset_right = 757.0
+offset_bottom = 574.0
+theme_override_font_sizes/font_size = 40
+text = "REINTENTAR"
+script = ExtResource("2_7kfe6")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
